@@ -97,7 +97,6 @@ $(document).ready(function(){
 
     // バリデーション確認処理
     $('input').on('change blur', function (event) {
-        console.log("変更がありました");
         setTimeout(function() {
             var inv = $('.' + si);
             $('#formsubmit').prop('disabled', (inv.length != 0));
@@ -122,7 +121,6 @@ function toHalfWidth(str) {
     return str.replace(/[－―]/g, '-');
 }
 function kanaHalfToFull(str) {
-    console.log(str);
     var kanaMap = {
         'ｶﾞ': 'ガ', 'ｷﾞ': 'ギ', 'ｸﾞ': 'グ', 'ｹﾞ': 'ゲ', 'ｺﾞ': 'ゴ',
         'ｻﾞ': 'ザ', 'ｼﾞ': 'ジ', 'ｽﾞ': 'ズ', 'ｾﾞ': 'ゼ', 'ｿﾞ': 'ゾ',

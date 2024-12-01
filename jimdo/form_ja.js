@@ -102,7 +102,6 @@ function toHalfWidth(str) {
     return str.replace(/[－―]/g, '-');
 }
 function kanaHalfToFull(str) {
-    console.log(str);
     var kanaMap = {
         'ｶﾞ': 'ガ', 'ｷﾞ': 'ギ', 'ｸﾞ': 'グ', 'ｹﾞ': 'ゲ', 'ｺﾞ': 'ゴ',
         'ｻﾞ': 'ザ', 'ｼﾞ': 'ジ', 'ｽﾞ': 'ズ', 'ｾﾞ': 'ゼ', 'ｿﾞ': 'ゾ',
