@@ -163,7 +163,6 @@ function selectToCheckBox(id){
     });
     var tr = null;
     $('#' + id + ' option').each(function(index, element) {
-        console.log(index + ':' + (index % 2));
         if (index % 3 == 0) {
             tr = $('<tr>');
             table.append(tr);

@@ -200,6 +200,18 @@ input[type=password] {
     clear: both;
 }
 
+.layoutTalbe {
+    width: 100%;
+    border: none;
+}
+
+.layoutTalbe td {
+    border: none;
+    width: 33%;
+    text-align: left;
+}
+
+
 @media all {
 
     .zcwf_lblTopBottom .zcwf_col_lab,
