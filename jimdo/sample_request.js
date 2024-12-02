@@ -158,7 +158,17 @@ function selectToCheckBox(id){
     var div = $('<div>', {
         class: 'seltocheck'
     });
+    var table = $('<table>', {
+        class: 'layoutTalbe'
+    });
+    var tr = null;
     $('#' + id + ' option').each(function(index, element) {
+        console.log(index);
+        if (index % 2 == 3) {
+            console.log('    index % 2 == 3');
+        } else {
+            console.log('    not');
+        }
         var label = $('<label>', {
             id: id + '_label_' + index,
             for: id + '_checkbox_' + index
