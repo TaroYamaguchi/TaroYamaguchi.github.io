@@ -163,12 +163,7 @@ function selectToCheckBox(id){
     });
     var tr = null;
     $('#' + id + ' option').each(function(index, element) {
-        console.log(index);
-        if (index % 2 == 3) {
-            console.log('    index % 2 == 3');
-        } else {
-            console.log('    not');
-        }
+        console.log(index + ':' + (index % 2));
         var label = $('<label>', {
             id: id + '_label_' + index,
             for: id + '_checkbox_' + index
