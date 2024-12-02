@@ -164,6 +164,11 @@ function selectToCheckBox(id){
     var tr = null;
     $('#' + id + ' option').each(function(index, element) {
         console.log(index + ':' + (index % 2));
+        if (index % 3 == 0) {
+            tr = $('<tr>');
+            table.append(tr);
+        }
+        var td = $('<td>');
         var label = $('<label>', {
             id: id + '_label_' + index,
             for: id + '_checkbox_' + index
@@ -179,9 +184,12 @@ function selectToCheckBox(id){
         span.text($(element).val());
         label.append(radio);
         label.append(span);
-        label.append('<br>');
-        div.append(label);
+        //label.append('<br>');
+        td.append(label);
+        tr.append(td);
+        //div.append(label);
     });
+    div.append(table);
     select.after(div);
     select.hide();
 }
