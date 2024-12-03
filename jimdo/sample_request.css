@@ -211,6 +211,18 @@ input[type=password] {
     text-align: left;
 }
 
+.layoutTalbeAtRequireSample {
+    width: 66%;
+    border: none;
+}
+
+.layoutTalbeAtRequireSample td {
+    border: none;
+    width: 350;
+    text-align: left;
+}
+
+
 .form_help {
     width: 100%;
     color: lightskyblue;
