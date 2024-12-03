@@ -86,7 +86,7 @@ $(document).ready(function(){
     });
 
     // COBJ1CF16 希望サンプル
-    selectToCheckBox(wantSampleId);
+    selectToCheckBoxAtRequireSample(wantSampleId);
     // COBJ1CF15 使用箇所
     selectToCheckBox(usePointId);
     // COBJ1CF6 採用ポイント
@@ -152,6 +152,55 @@ function kanaHalfToFull(str) {
 function selectOption(id, value, flg)
 {
     $("#" + id + " [value='" + value + "']").prop('selected', flg);
+}
+function selectToCheckBoxAtRequireSample(id){
+    var select = $('#' + id);
+    var div = $('<div>', {
+        class: 'seltocheck'
+    });
+    var table = $('<table>', {
+        class: 'layoutTalbeAtRequireSample'
+    });
+    var tr = null;
+    $('#' + id + ' option').each(function(index, element) {
+        tr = $('<tr>');
+        table.append(tr);
+        var td = $('<td>');
+        var label = $('<label>', {
+            id: id + '_label_' + index,
+            for: id + '_checkbox_' + index
+        });
+        var radio = $('<input>', {
+            type: 'checkbox',
+            name: id + '_checkbox', // 全て同じname属性にすることでグループ化
+            value: $(element).val(),
+            id: id + '_checkbox_' + index,
+            onChange: 'selectOption(\'' + id + '\', \'' + $(element).val() + '\', $(this).prop(\'checked\'));'
+        });
+        var span = $('<span>');
+        span.text($(element).val());
+        label.append(radio);
+        label.append(span);
+
+        td.append(label);
+        tr.append(td);
+
+        // 入力項目
+        var td2nd = $('<td>');
+        if (index == 0) {
+            //親要素の変更
+            var fineColorSample = $('fincolor');
+            fineColorSample.parent(td2nd);
+        } else if (index == 1) {
+            //親要素の変更
+            var noirssample = $('noirssample');
+            noirssample.parent(td2nd);
+        }
+        tr.append(td2nd);
+    });
+    div.append(table);
+    select.after(div);
+    select.hide();
 }
 function selectToCheckBox(id){
     var select = $('#' + id);
