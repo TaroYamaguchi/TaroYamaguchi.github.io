@@ -65,10 +65,10 @@ $(document).ready(function () {
 });
 function toHalfWidth(str) {
     // 全角英数字を半角に変換
-    str = str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function (s) {
+    str = str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
         return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
     });
-    return str.replace(/[－―]/g, '-');
+    return str.replace(/[ー－―]/g, '-');
 }
 
 function validateEmail16871000002775576() {
