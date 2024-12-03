@@ -14,6 +14,8 @@ const telephoneId = 'COBJ1CF12'; // COBJ1CF12 電話番号
 const wantSampleId = 'COBJ1CF16'; // COBJ1CF16 希望サンプル
 const usePointId = 'COBJ1CF15'; // COBJ1CF15 使用箇所
 const selectionPointId = 'COBJ1CF6'; // COBJ1CF6 採用ポイント
+const finColorNumId = 'COBJ1CF51'; // COBJ1CF51 ファインカラーサンプル帳　数量（冊）
+const noiesColorNumId = 'COBJ1CF52'; // COBJ1CF52 のイエスカラーサンプル帳　数量（冊）
 
 function setValidateResult(name, isShow)
 {
@@ -118,7 +120,7 @@ function toHalfWidth(str) {
     str = str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
         return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
     });
-    return str.replace(/[－―]/g, '-');
+    return str.replace(/[ー－―]/g, '-');
 }
 function kanaHalfToFull(str) {
     var kanaMap = {
@@ -153,6 +155,19 @@ function selectOption(id, value, flg)
 {
     $("#" + id + " [value='" + value + "']").prop('selected', flg);
 }
+
+function selectOptionAtRequireSample(id, value, flg, index)
+{
+    selectOption(id, value, flg);
+    if (index == 0) {
+        $('#' + finColorNumId).val(0);
+        $('#' + finColorNumId).prop('disabled', !flg);
+    } else if (index == 1) {
+        $('#' + noiesColorNumId).val(0);
+        $('#' + noiesColorNumId).prop('disabled', !flg);
+    }
+}
+
 function selectToCheckBoxAtRequireSample(id){
     var select = $('#' + id);
     var div = $('<div>', {
@@ -162,6 +177,7 @@ function selectToCheckBoxAtRequireSample(id){
         class: 'layoutTalbeAtRequireSample'
     });
     var tr = null;
+
     $('#' + id + ' option').each(function(index, element) {
         tr = $('<tr>');
         table.append(tr);
@@ -175,7 +191,7 @@ function selectToCheckBoxAtRequireSample(id){
             name: id + '_checkbox', // 全て同じname属性にすることでグループ化
             value: $(element).val(),
             id: id + '_checkbox_' + index,
-            onChange: 'selectOption(\'' + id + '\', \'' + $(element).val() + '\', $(this).prop(\'checked\'));'
+            onChange: 'selectOptionAtRequireSample(\'' + id + '\', \'' + $(element).val() + '\', $(this).prop(\'checked\'), ' + index + ');'
         });
         var span = $('<span>');
         span.text($(element).val());
@@ -199,7 +215,7 @@ function selectToCheckBoxAtRequireSample(id){
         tr.append(td2nd);
     });
     div.append(table);
-    select.after(div);
+    select.after(div);    
     select.hide();
 }
 function selectToCheckBox(id){

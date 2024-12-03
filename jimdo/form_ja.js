@@ -99,7 +99,7 @@ function toHalfWidth(str) {
     str = str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
         return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
     });
-    return str.replace(/[－―]/g, '-');
+    return str.replace(/[ー－―]/g, '-');
 }
 function kanaHalfToFull(str) {
     var kanaMap = {
