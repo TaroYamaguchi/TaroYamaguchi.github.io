@@ -189,16 +189,12 @@ function selectToCheckBoxAtRequireSample(id){
         var td2nd = $('<td>');
         if (index == 0) {
             //親要素の変更
-            console.log("finecolor");
             var fineColorSample = $('#fincolor');
-            fineColorSample.parent(td2nd);
-            console.log("set?");
+            fineColorSample.appendTo(td2nd);
         } else if (index == 1) {
             //親要素の変更
-            console.log("noirssample");
             var noirssample = $('#noirssample');
-            noirssample.parent(td2nd);
-            console.log("set?");
+            noirssample.appendTo(td2nd);
         }
         tr.append(td2nd);
     });
