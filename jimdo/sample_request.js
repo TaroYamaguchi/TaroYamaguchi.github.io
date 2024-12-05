@@ -165,6 +165,9 @@ function selectOptionAtRequireSample(id, value, flg, index)
     } else if (index == 1) {
         $('#' + noiesColorNumId).val(0);
         $('#' + noiesColorNumId).prop('disabled', !flg);
+    } else if (index == 2) {
+        $('.cutSampleNum').val(0);
+        $('.cutSampleNum').prop('disabled', !flg);
     }
 }
 
