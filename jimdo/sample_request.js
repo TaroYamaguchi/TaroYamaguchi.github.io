@@ -67,7 +67,7 @@ $(document).ready(function(){
     // COBJ1CF2 郵便番号
     $('#' + postCodeId).on('change blur', function (event) {
         var org = $('#' + postCodeId).val();
-        $('#' + postCodeId).val(toHalfWidth(org));
+        $('#' + postCodeId).val(toHalfWidthNumOnly(org));
         checkEmpty(postCodeId);
     });
 
@@ -81,7 +81,7 @@ $(document).ready(function(){
     // COBJ1CF12 電話番号
     $('#' + telephoneId).on('change blur', function (event) {
         var org = $('#' + telephoneId).val();
-        $('#' + telephoneId).val(toHalfWidth(org));
+        $('#' + telephoneId).val(toHalfWidthNumOnly(org));
         // 書式チェック
         const regex = /^\d{2,4}-\d{2,4}-\d{4}$/;
         setValidateResult(telephoneId, (org == '' || !regex.test(org)));
@@ -116,6 +116,13 @@ $(document).ready(function(){
     });    
 });
 function toHalfWidth(str) {
+    // 全角英数字を半角に変換
+    str = str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+        return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+    });
+    return str.replace(/[－―]/g, '-');
+}
+function toHalfWidthNumOnly(str) {
     // 全角英数字を半角に変換
     str = str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
         return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
