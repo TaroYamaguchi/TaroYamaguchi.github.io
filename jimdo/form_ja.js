@@ -12,7 +12,7 @@ const postCodeId = 'CASECF5'; // CASECF20 郵便番号
 const addressId = 'CASECF8'; // CASECF8 ご住所
 const telephoneId = 'Phone'; // Phone 電話番号
 const lastCheckId = 'privacyTool16871000002735207'; // privacyTool16871000002735207 当社プライバシーポリシー
-
+const formId = 'webform16871000002735207';
 
 function setValidateResult(name, isShow)
 {

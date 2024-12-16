@@ -10,6 +10,7 @@ const addressId = 'CASECF8'; // CASECF8 ご住所
 const telephoneId = 'Phone'; // Phone 電話番号
 const inquiryId = 'CASECF3'; // CASECF3 問い合わせ内容
 const lastCheckId = 'privacyTool16871000002775576'; // privacyTool16871000002775576 当社プライバシーポリシー
+const formId = 'webform16871000002775576';
 
 function setValidateResult(name, isShow) {
     var inv = $('#' + name + 'Invalid');
