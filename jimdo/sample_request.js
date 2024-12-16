@@ -99,6 +99,11 @@ $(document).ready(function(){
     // COBJ1CF6 採用ポイント
     selectToCheckBox(selectionPointId);
 
+    // acceptancePointId
+    $('#' + acceptancePointId).on('change blur', function (event) {
+        setValidateResult(acceptancePointId, !$('#' + acceptancePointId).is(':checked'));
+    });
+
     // lastCheckId 当社プライバシーポリシー
     $('#' + lastCheckId).on('change blur', function (event) {
         setValidateResult(lastCheckId, !$('#' + lastCheckId).is(':checked'));
@@ -121,6 +126,7 @@ $(document).ready(function(){
     });
 
     $('#' + formId).on('submit', function(event) {
+        $('#' + acceptancePointId).triggerHandler('change');
         setValidateResult(lastCheckId, !$('#' + lastCheckId).is(':checked'));
         setValidateResult(sampleCheckId, !$('#' + sampleCheckId).is(':checked'));
 
