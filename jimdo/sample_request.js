@@ -100,7 +100,7 @@ $(document).ready(function(){
     selectToCheckBox(selectionPointId);
 
     // acceptancePointId
-    $('#' + acceptancePointId).on('change blur', function (event) {
+    $('input[name="' + acceptancePointId + '_checkbox"]').on('change blur', function (event) {
         setValidateResult(acceptancePointId, !$('#' + acceptancePointId).is(':checked'));
     });
 
@@ -126,9 +126,18 @@ $(document).ready(function(){
     });
 
     $('#' + formId).on('submit', function(event) {
-        $('#' + acceptancePointId).triggerHandler('change');
+        $('input[name="' + acceptancePointId + '_checkbox"]').triggerHandler('blur');
         setValidateResult(lastCheckId, !$('#' + lastCheckId).is(':checked'));
         setValidateResult(sampleCheckId, !$('#' + sampleCheckId).is(':checked'));
+        emptyCheckArray.forEach(
+            emp => {
+                $('#' + emp).triggerHandler('blur');
+            }
+        );
+        $('#' + emailId).triggerHandler('blur');
+        $('#' + postCodeId).triggerHandler('blur');
+        $('#' + addressId).triggerHandler('blur');
+        $('#' + telephoneId).triggerHandler('blur');
 
         if ($('.' + si).length != 0) {
             event.preventDefault();
