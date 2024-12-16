@@ -102,6 +102,30 @@ $(document).ready(function(){
         }, 500);
     });
 
+    $('#' + formId).on('submit', function(event) {
+        emptyCheckArray.forEach(
+            emp => {
+                $('#' + emp).triggerHandler('blur');
+            }
+        );
+        $('#' + emailId).triggerHandler('blur');
+        $('#' + postCodeId).triggerHandler('blur');
+        $('#' + addressId).triggerHandler('blur');
+        $('#' + telephoneId).triggerHandler('blur');
+        $('#' + companyId).triggerHandler('blur');
+        $('#' + lastCheckId).triggerHandler('blur');
+
+        if ($('.' + si).length != 0) {
+            event.preventDefault();
+
+            var $target = $('.' + si).first(); // 最初の要素を取得
+            $('html, body').animate({
+                scrollTop: $target.offset().top // 要素の位置にスクロール
+            }, 500); // 500msでスムーズにスクロール
+        }
+    });
+
+
 });
 function toHalfWidth(str) {
     // 全角英数字を半角に変換
