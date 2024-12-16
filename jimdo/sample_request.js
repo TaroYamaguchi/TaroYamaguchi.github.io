@@ -20,6 +20,7 @@ const propertyName = 'COBJ1CF13'; // COBJ1CF13 物件名
 const acceptancePointId = 'COBJ1CF6'; // COBJ1CF6 採用に際してのポイント
 const lastCheckId = 'privacyTool16871000002735104'; // privacyTool16871000002735104 当社プライバシーポリシー
 const sampleCheckId = 'COBJ1CF101'; // COBJ1CF101 サンプル着払い同意
+const formId = 'webform16871000002735104'; //フォームのID
 
 function setValidateResult(name, isShow)
 {
@@ -117,6 +118,20 @@ $(document).ready(function(){
             var inv = $('.' + si);
             $('#formsubmit').prop('disabled', (inv.length != 0));
         }, 500);
+    });
+
+    $('#' + formId).on('submit', function(event) {
+        setValidateResult(lastCheckId, !$('#' + lastCheckId).is(':checked'));
+        setValidateResult(sampleCheckId, !$('#' + sampleCheckId).is(':checked'));
+
+        if ($('.' + si).length != 0) {
+            event.preventDefault();
+
+            var $target = $('.' + si).first(); // 最初の要素を取得
+            $('html, body').animate({
+                scrollTop: $target.offset().top // 要素の位置にスクロール
+            }, 500); // 500msでスムーズにスクロール
+        }
     });
 
     // type=numberの数値制御
