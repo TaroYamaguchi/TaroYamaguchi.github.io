@@ -129,6 +129,15 @@ $(document).ready(function(){
         $('input[name="' + acceptancePointId + '_checkbox"]').triggerHandler('blur');
         setValidateResult(lastCheckId, !$('#' + lastCheckId).is(':checked'));
         setValidateResult(sampleCheckId, !$('#' + sampleCheckId).is(':checked'));
+        emptyCheckArray.forEach(
+            emp => {
+                $('#' + emp).triggerHandler('blur');
+            }
+        );
+        $('#' + emailId).triggerHandler('blur');
+        $('#' + postCodeId).triggerHandler('blur');
+        $('#' + addressId).triggerHandler('blur');
+        $('#' + telephoneId).triggerHandler('blur');
 
         if ($('.' + si).length != 0) {
             event.preventDefault();
