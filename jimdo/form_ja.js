@@ -11,6 +11,8 @@ const positionId = 'COBJ1CF14'; // COBJ1CF14 役職名
 const postCodeId = 'CASECF5'; // CASECF20 郵便番号
 const addressId = 'CASECF8'; // CASECF8 ご住所
 const telephoneId = 'Phone'; // Phone 電話番号
+const lastCheckId = 'privacyTool16871000002735207'; // privacyTool16871000002735207 当社プライバシーポリシー
+
 
 function setValidateResult(name, isShow)
 {
@@ -86,6 +88,11 @@ $(document).ready(function(){
     
     // フリガナ処理
     $.fn.autoKana('#' + nameId, '#' + furiganaId, {katakana:true});
+
+    // lastCheckId 当社プライバシーポリシー
+    $('#' + lastCheckId).on('change blur', function (event) {
+        setValidateResult(lastCheckId, !$('#' + lastCheckId).is(':checked'));
+    });
 
     // バリデーション確認処理
     $('input').on('change blur', function (event) {

@@ -138,6 +138,7 @@ $(document).ready(function(){
         $('#' + postCodeId).triggerHandler('blur');
         $('#' + addressId).triggerHandler('blur');
         $('#' + telephoneId).triggerHandler('blur');
+        $('#' + companyId).triggerHandler('blur');
 
         if ($('.' + si).length != 0) {
             event.preventDefault();
