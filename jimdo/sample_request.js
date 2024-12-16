@@ -100,7 +100,7 @@ $(document).ready(function(){
     selectToCheckBox(selectionPointId);
 
     // acceptancePointId
-    $('#' + acceptancePointId).on('change blur', function (event) {
+    $('input[name="' + acceptancePointId + '_checkbox"]').on('change blur', function (event) {
         setValidateResult(acceptancePointId, !$('#' + acceptancePointId).is(':checked'));
     });
 
@@ -126,7 +126,7 @@ $(document).ready(function(){
     });
 
     $('#' + formId).on('submit', function(event) {
-        $('#' + acceptancePointId).triggerHandler('change');
+        $('input[name="' + acceptancePointId + '_checkbox"]').triggerHandler('blur');
         setValidateResult(lastCheckId, !$('#' + lastCheckId).is(':checked'));
         setValidateResult(sampleCheckId, !$('#' + sampleCheckId).is(':checked'));
 
