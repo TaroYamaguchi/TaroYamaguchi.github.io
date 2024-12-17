@@ -24,6 +24,7 @@ const formId = 'webform16871000002735104'; //フォームのID
 
 function setValidateResult(name, isShow)
 {
+    console.log(name + ',' + isShow);
     var inv = $('#' + name + 'Invalid');
     var obj = $('#' + name);
     isShow ? inv.removeClass(hi).addClass(si) : inv.removeClass(si).addClass(hi);
