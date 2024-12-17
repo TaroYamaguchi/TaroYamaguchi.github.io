@@ -209,7 +209,7 @@ function selectOption(id, value, flg)
     console.log(sel.length);
     console.log((sel.length == 0));
     $("#" + id + " [value='" + value + "']").prop('selected', flg);
-    setValidateResult(id, (sel.length == 0));
+    setValidateResult(id, (sel.length > 0) ? false : true);
 }
 
 function selectOptionAtRequireSample(id, value, flg, index)
