@@ -24,7 +24,6 @@ const formId = 'webform16871000002735104'; //フォームのID
 
 function setValidateResult(name, isShow)
 {
-    console.log(name + ',' + isShow);
     var inv = $('#' + name + 'Invalid');
     var obj = $('#' + name);
     isShow ? inv.removeClass(hi).addClass(si) : inv.removeClass(si).addClass(hi);
@@ -207,10 +206,9 @@ function kanaHalfToFull(str) {
 function selectOption(id, value, flg)
 {
     var sel = $('input[name="' + id + '_checkbox"]:checked');
-    console.log(sel.length);
-    console.log((sel.length == 0));
     $("#" + id + " [value='" + value + "']").prop('selected', flg);
-    setValidateResult(id, (sel.length > 0) ? false : true);
+    var inv = $('#' + id + 'Invalid');
+    (sel.length == 0) ? inv.removeClass(hi).addClass(si) : inv.removeClass(si).addClass(hi);
 }
 
 function selectOptionAtRequireSample(id, value, flg, index)
