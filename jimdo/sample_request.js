@@ -205,8 +205,8 @@ function kanaHalfToFull(str) {
 
 function selectOption(id, value, flg)
 {
-    console.log('input[name="' + id + '_checkbox"]:checked');
     $("#" + id + " [value='" + value + "']").prop('selected', flg);
+    console.log('test');
     setValidateResult(id, $('input[name="' + id + '_checkbox"]:checked').length == 0);
 }
 
