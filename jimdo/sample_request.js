@@ -207,6 +207,7 @@ function selectOption(id, value, flg)
 {
     var sel = $('input[name="' + id + '_checkbox"]:checked');
     console.log(sel.length);
+    console.log((sel.length == 0));
     $("#" + id + " [value='" + value + "']").prop('selected', flg);
     setValidateResult(id, (sel.length == 0));
 }
