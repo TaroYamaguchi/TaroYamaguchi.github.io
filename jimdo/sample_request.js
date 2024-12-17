@@ -101,7 +101,7 @@ $(document).ready(function(){
 
     // acceptancePointId
     $('input[name="' + acceptancePointId + '_checkbox"]').on('change blur', function (event) {
-        setValidateResult(acceptancePointId, !$('#' + acceptancePointId).is(':checked'));
+        setValidateResult(acceptancePointId, !$(this).is(':checked'));
     });
 
     // lastCheckId 当社プライバシーポリシー
