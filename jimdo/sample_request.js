@@ -24,9 +24,6 @@ const formId = 'webform16871000002735104'; //フォームのID
 
 function setValidateResult(name, isShow)
 {
-    console.log('来た');
-    console.log(name);
-    console.log(isShow);
     var inv = $('#' + name + 'Invalid');
     var obj = $('#' + name);
     isShow ? inv.removeClass(hi).addClass(si) : inv.removeClass(si).addClass(hi);
@@ -103,9 +100,9 @@ $(document).ready(function(){
     selectToCheckBox(selectionPointId);
 
     // acceptancePointId
-    $('input[name="' + acceptancePointId + '_checkbox"]').on('change blur', function (event) {
-        setValidateResult(acceptancePointId, !$('#' + acceptancePointId).is(':checked'));
-    });
+//    $('input[name="' + acceptancePointId + '_checkbox"]').on('change blur', function (event) {
+//        setValidateResult(acceptancePointId, !$('#' + acceptancePointId).is(':checked'));
+//    });
 
     // lastCheckId 当社プライバシーポリシー
     $('#' + lastCheckId).on('change blur', function (event) {
@@ -208,10 +205,8 @@ function kanaHalfToFull(str) {
 
 function selectOption(id, value, flg)
 {
-    var sel = $('input[name="' + id + '_checkbox"]:checked');
     $("#" + id + " [value='" + value + "']").prop('selected', flg);
-    var inv = $('#' + id + 'Invalid');
-    (sel.length == 0) ? inv.removeClass(hi).addClass(si) : inv.removeClass(si).addClass(hi);
+    setValidateResult(id, $('input[name="' + id + '_checkbox"]:checked').length == 0);
 }
 
 function selectOptionAtRequireSample(id, value, flg, index)
