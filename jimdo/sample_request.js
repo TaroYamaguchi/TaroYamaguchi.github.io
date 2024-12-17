@@ -101,7 +101,7 @@ $(document).ready(function(){
 
     // acceptancePointId
     $('input[name="' + acceptancePointId + '_checkbox"]').on('change blur', function (event) {
-        setValidateResult(acceptancePointId, !$(this).is(':checked'));
+        setValidateResult(acceptancePointId, !$('#' + acceptancePointId).is(':checked'));
     });
 
     // lastCheckId 当社プライバシーポリシー
@@ -205,6 +205,7 @@ function kanaHalfToFull(str) {
 
 function selectOption(id, value, flg)
 {
+    console.log('input[name="' + id + '_checkbox"]:checked');
     $("#" + id + " [value='" + value + "']").prop('selected', flg);
     setValidateResult(id, $('input[name="' + id + '_checkbox"]:checked').length == 0);
 }
