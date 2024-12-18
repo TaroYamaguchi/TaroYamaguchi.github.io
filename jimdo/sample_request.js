@@ -121,12 +121,12 @@ $(document).ready(function(){
 
     $('#' + formId).on('submit', function(event) {
         setValidateResult(lastCheckId, !$('#' + lastCheckId).is(':checked'));
-        setValidateResult(selectionPointId, !$('#' + selectionPointId).is(':checked'));
         emptyCheckArray.forEach(
             emp => {
                 $('#' + emp).triggerHandler('blur');
             }
         );
+        $('#' + selectionPointId + '_checkbox_0').triggerHandler('blur');
         $('#' + sampleCheckId + '_checkbox_0').triggerHandler('blur');
         $('#' + usePointId + '_checkbox_0').triggerHandler('blur');
         $('#' + emailId).triggerHandler('blur');
