@@ -121,8 +121,8 @@ $(document).ready(function(){
 
     $('#' + formId).on('submit', function(event) {
         setValidateResult(lastCheckId, !$('#' + lastCheckId).is(':checked'));
-        setValidateResult(sampleCheckId, !$('#' + sampleCheckId).is(':checked'));
-        setValidateResult(usePointId, !$('#' + usePointId).is(':checked'));
+        setValidateResult(sampleCheckId, $('#' + sampleCheckId).is(':checked').length == 0);
+        setValidateResult(usePointId, !$('#' + usePointId).is(':checked').length == 0);
         setValidateResult(selectionPointId, !$('#' + selectionPointId).is(':checked'));
         emptyCheckArray.forEach(
             emp => {
