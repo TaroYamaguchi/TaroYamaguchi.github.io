@@ -142,16 +142,6 @@ input[type=password] {
     font-size: 13px;
 }
 
-#formsubmit {
-    background-color: initial;
-    border-color: initial;
-    border-width: initial;
-    border-style: initial;
-    color: initial;
-    font-size: var(--baseColor);
-    border-radius: initial;
-}
-
 .zcwf_lblTopBottom .zcwf_privacy_txt {
     width: 90%;
     color: rgb(0, 0, 0);
