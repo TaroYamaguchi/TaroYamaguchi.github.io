@@ -120,7 +120,9 @@ $(document).ready(function(){
     // 半角英数字-のみ制限
     $('input[type="text"][data-alphanumonly]').on('change blur', function (event) {
         var org = $(this).val();
-        $(this).val(toHalfWidthNumOnly(org).replace(/[^A-Za-z0-9\-]/g, ''));
+        $(this).val(toHalfWidthNumOnly(org));
+        //　半角英数字ハイフン以外が含まれている場合はエラー
+        setValidateResult($(this).attr('id'), !org.match(/^[a-zA-Z0-9\-]+$/));
     }); 
 
     // バリデーション確認処理
