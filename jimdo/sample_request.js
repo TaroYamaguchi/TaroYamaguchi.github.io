@@ -120,8 +120,8 @@ $(document).ready(function(){
     // 半角英数字-のみ制限
     $('input[type="text"][data-alphanumonly]').on('change blur', function (event) {
         var org = $(this).val();
-        $(this).val(toHalfWidthNumOnly(org));
-    });
+        $(this).val(toHalfWidthNumOnly(org).replace(/[^A-Za-z0-9\-]/g, ''));
+    }); 
 
     // バリデーション確認処理
     $('input').on('change blur', function (event) {
