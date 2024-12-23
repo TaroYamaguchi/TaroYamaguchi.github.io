@@ -111,7 +111,7 @@ $(document).ready(function(){
 
     // industryTypeId 業界
     $('#' + industryTypeId).on('change blur', function (event) {
-        setValidateResult(industryTypeId, !$('#' + industryTypeId).is(':checked'));
+        setValidateResult(industryTypeId, $('#' + industryTypeId).val() == '-None-' || $('#' + industryTypeId).val() == '');
     });
 
     // フリガナ処理
