@@ -119,6 +119,7 @@ $(document).ready(function(){
         $('#' + telephoneId).triggerHandler('blur');
         $('#' + companyId).triggerHandler('blur');
         $('#' + lastCheckId).triggerHandler('blur');
+        $('#' + industryTypeId).triggerHandler('blur');
 
         if ($('.' + si).length != 0) {
             event.preventDefault();
