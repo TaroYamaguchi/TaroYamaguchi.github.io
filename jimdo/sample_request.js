@@ -122,7 +122,7 @@ $(document).ready(function(){
         var org = $(this).val();
         $(this).val(toHalfWidthNumOnly(org));
         //　半角英数字ハイフン以外が含まれている場合はエラー
-        setValidateResult($(this).attr('id'), !org.match(/^[a-zA-Z0-9\-]+$/));
+        setValidateResult($(this).attr('id'), !(org == "" || org.match(/^[a-zA-Z0-9\-]+$/)));
     }); 
 
     // バリデーション確認処理
