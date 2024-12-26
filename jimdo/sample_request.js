@@ -141,7 +141,7 @@ $(document).ready(function(){
             }
         );
         $('#' + selectionPointId + '_checkbox_0').triggerHandler('blur');
-        $('#' + sampleCheckId + '_checkbox_0').triggerHandler('blur');
+        $('#' + sampleCheckId + '_checkbox').triggerHandler('blur');
         $('#' + usePointId + '_checkbox_0').triggerHandler('blur');
         $('#' + emailId).triggerHandler('blur');
         $('#' + postCodeId).triggerHandler('blur');
