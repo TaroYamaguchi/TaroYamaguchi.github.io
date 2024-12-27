@@ -20,7 +20,9 @@ const propertyName = 'COBJ1CF13'; // COBJ1CF13 物件名
 const lastCheckId = 'privacyTool16871000002735104'; // privacyTool16871000002735104 当社プライバシーポリシー
 const sampleCheckId = 'COBJ1CF101'; // COBJ1CF101 サンプル着払い同意
 const industryTypeId = 'COBJ1CF155'; // COBJ1CF155 業界
+const requirePurposId = 'COBJ1CF17'; // COBJ1CF17 サンプル請求目的
 const formId = 'webform16871000002735104'; //フォームのID
+
 
 function setValidateResult(name, isShow)
 {
@@ -112,6 +114,11 @@ $(document).ready(function(){
     // industryTypeId 業界
     $('#' + industryTypeId).on('change blur', function (event) {
         setValidateResult(industryTypeId, $('#' + industryTypeId).val() == '-None-' || $('#' + industryTypeId).val() == '');
+    });
+
+    // requirePurposId サンプル請求目的
+    $('#' + requirePurposId).on('change blur', function (event) {
+        setValidateResult(requirePurposId, $('#' + requirePurposId).val() == '-None-' || $('#' + requirePurposId).val() == '');
     });
 
     // フリガナ処理
