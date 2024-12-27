@@ -137,6 +137,7 @@ $(document).ready(function(){
         setValidateResult(lastCheckId, !$('#' + lastCheckId).is(':checked'));
         setValidateResult(sampleCheckId, !$('input[name="' + sampleCheckId + '_check"]:checked').length);
         setValidateResult(selectionPointId, !$('input[name="' + selectionPointId + '_check"]:checked').length);
+        setValidateResult(usePointId, !$('input[name="' + usePointId + '_check"]:checked').length);
         emptyCheckArray.forEach(
             emp => {
                 $('#' + emp).triggerHandler('blur');
