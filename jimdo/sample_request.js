@@ -144,6 +144,7 @@ $(document).ready(function(){
         setValidateResult(lastCheckId, !$('#' + lastCheckId).is(':checked'));
         setValidateResult(sampleCheckId, !$('input[name="' + sampleCheckId + '_checkbox"]:checked').length);
         setValidateResult(selectionPointId, !$('input[name="' + selectionPointId + '_checkbox"]:checked').length);
+        setValidateResult(wantSampleId, !$('input[name="' + wantSampleId + '_checkbox"]:checked').length);
         setValidateResult(usePointId, !$('input[name="' + usePointId + '_checkbox"]:checked').length);
         emptyCheckArray.forEach(
             emp => {
