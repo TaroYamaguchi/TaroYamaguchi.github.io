@@ -245,7 +245,7 @@ input[type=password] {
 .form_help {
     width: 100%;
     color: lightskyblue;
-    font-size: small;
+    /*font-size: small;*/
 }
 
 #cutsumplehelp {
@@ -278,7 +278,7 @@ input[type=password] {
     }
     .showInvalid {
         display: block;
-        font-size: small;
+        /* font-size: small; */
         color: red;
         padding-left: 7px;
         margin-top: 5px;
@@ -290,6 +290,6 @@ input[type=password] {
         border-radius: 5px;
     }
     .seltocheck {
-        font-size: small;
+        /* font-size: small; */
     }
 }
