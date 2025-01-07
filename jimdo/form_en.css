@@ -79,7 +79,7 @@ input[type=password],
     border: 1px solid #ccc;
     background: #fff;
     border-radius: 4px;
-    font-size: 12px;
+    font-size: 16px;
     float: left;
     resize: vertical;
     padding: 2px 5px;
@@ -95,7 +95,7 @@ input[type=password],
 .zcwf_lblTopBottom .zcwf_col_help {
     float: left;
     margin-left: 7px;
-    font-size: 12px;
+    font-size: 16px;
     max-width: 35%;
     word-break: break-word;
 }
@@ -109,7 +109,7 @@ input[type=password],
     border: 1px solid #c0c6cc;
     color: #c1c1c1;
     text-align: center;
-    font-size: 11px;
+    font-size: 16px;
     line-height: 16px;
     font-weight: bold;
     border-radius: 50%;
@@ -123,11 +123,11 @@ input[type=password],
     margin-right: 5px;
     cursor: pointer;
     color: var(--baseColor);
-    font-size: 12px;
+    font-size: 16px;
 }
 
 #formsubmit {
-    font-size: 12px;
+    font-size: 16px;
     color: var(--baseColor);
     border: 1px solid #c0c6cc;
     padding: 3px 9px;
@@ -143,7 +143,7 @@ input[type=password],
 .zcwf_lblTopBottom .zcwf_privacy_txt {
     width: 90%;
     color: rgb(0, 0, 0);
-    font-size: 12px;
+    font-size: 16px;
     font-family: Arial;
     display: inline-block;
     vertical-align: top;
@@ -153,7 +153,7 @@ input[type=password],
 }
 
 .zcwf_lblTopBottom .zcwf_button {
-    font-size: 12px;
+    font-size: 16px;
     color: var(--baseColor);
     border: 1px solid #c0c6cc;
     padding: 3px 9px;
@@ -198,6 +198,16 @@ input[type=password],
     clear: both;
 }
 
+.form_help {
+    width: 100%;
+    color: lightskyblue;
+    /*font-size: small;*/
+}
+
+#donotemptycorpname {
+    color: black;
+}
+
 @media all {
 
     .zcwf_lblTopBottom .zcwf_col_lab,
@@ -209,7 +219,6 @@ input[type=password],
     .zcwf_lblTopBottom .zcwf_col_help {
         width: 40%;
     }
-
     /* フォーム制御系スタイル */
     .hide {
         display: none;
@@ -219,7 +228,7 @@ input[type=password],
     }
     .showInvalid {
         display: block;
-        font-size: small;
+    /*font-size: small;*/
         color: red;
         padding-left: 7px;
         margin-top: 5px;
@@ -231,9 +240,10 @@ input[type=password],
         border-radius: 5px;
     }
     .seltocheck {
-        font-size: small;
+        /*font-size: small;*/
     }
 }
+
 #calenDiv {
     padding: 10px;
     display: table;
