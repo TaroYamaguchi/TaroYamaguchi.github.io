@@ -44,6 +44,9 @@ input[type=password],
     resize: vertical;
     border-radius: 2px;
     float: left;
+    font-size: 1em;
+    line-height: 1.5;
+    padding: 10px;
 }
 
 .zcwf_lblTopBottom .zcwf_col_lab {
