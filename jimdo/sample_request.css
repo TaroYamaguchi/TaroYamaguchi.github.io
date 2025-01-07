@@ -39,7 +39,6 @@ body {
 .zcwf_lblTopBottom .zcwf_col_fld input[type=text],
 input[type=password],
 input[type=email],
-input[type=number],
 .zcwf_lblTopBottom .zcwf_col_fld textarea {
     width: 60%;
     border: 1px solid #c0c6cc !important;
