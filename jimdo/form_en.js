@@ -54,7 +54,7 @@ $(document).ready(function () {
         $('#' + telephoneId).val(toHalfWidth(org));
         // 書式チェック
         const regex = /^(\+?\d+\-)?\d{2,4}-\d{2,4}-\d{2,4}$/;
-        setValidateResult(telephoneId, (org == '' || !regex.test(org)));
+        setValidateResult(telephoneId, org == '');
     });
 
     // lastCheckId 当社プライバシーポリシー
