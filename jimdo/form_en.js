@@ -48,14 +48,7 @@ $(document).ready(function () {
         checkEmpty(companyId);
     });
 
-    // COBJ1CF12 電話番号
-    $('#' + telephoneId).on('change blur', function (event) {
-        var org = $('#' + telephoneId).val();
-        $('#' + telephoneId).val(toHalfWidth(org));
-        // 書式チェック
-        const regex = /^(\+?\d+\-)?\d{2,4}-\d{2,4}-\d{2,4}$/;
-        setValidateResult(telephoneId, (org == '' || !regex.test(org)));
-    });
+    // COBJ1CF12 電話番号チェック削除
 
     // lastCheckId 当社プライバシーポリシー
     $('#' + lastCheckId).on('change blur', function (event) {
