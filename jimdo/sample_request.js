@@ -271,6 +271,10 @@ function selectToCheckBoxAtRequireSample(id){
             id: id + '_checkbox_' + index,
             onChange: 'selectOptionAtRequireSample(\'' + id + '\', \'' + $(element).val() + '\', $(this).prop(\'checked\'), ' + index + ');'
         });
+        var disabledRadio = $(element).prop('disabled');
+        if (disabledRadio) {
+            radio.prop('disabled', true);
+        }
         var span = $('<span>');
         span.text($(element).val());
         label.append(radio);
