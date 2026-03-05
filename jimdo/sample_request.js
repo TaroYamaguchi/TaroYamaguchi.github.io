@@ -22,7 +22,7 @@ const sampleCheckId = 'COBJ1CF101'; // COBJ1CF101 サンプル着払い同意
 const industryTypeId = 'COBJ1CF155'; // COBJ1CF155 業界
 const requirePurposId = 'COBJ1CF17'; // COBJ1CF17 サンプル請求目的
 const formId = 'webform16871000002735104'; //フォームのID
-
+const whenToUseId = 'COBJ1CF18'; // 使用時期
 
 function setValidateResult(name, isShow)
 {
@@ -121,6 +121,11 @@ $(document).ready(function(){
         setValidateResult(requirePurposId, $('#' + requirePurposId).val() == '-None-' || $('#' + requirePurposId).val() == '');
     });
 
+    // whenToUseId 使用時期
+    $('#' + whenToUseId).on('change blur', function (event) {
+        setValidateResult(whenToUseId, $('#' + whenToUseId).val() == '-None-' || $('#' + whenToUseId).val() == '');
+    });
+
     // フリガナ処理
     $.fn.autoKana('#' + nameId, '#' + furiganaId, {katakana:true});
 
@@ -161,6 +166,7 @@ $(document).ready(function(){
         $('#' + companyId).triggerHandler('blur');
         $('#' + industryTypeId).triggerHandler('blur');
         $('#' + requirePurposId).triggerHandler('blur');
+        $('#' + whenToUseId).triggerHandler('blur');
 
         if ($('.' + si).length != 0) {
             event.preventDefault();
@@ -339,4 +345,3 @@ function selectToCheckBox(id){
     select.after(div);
     select.hide();
 }
-
